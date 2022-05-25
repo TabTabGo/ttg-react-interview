@@ -1,15 +1,22 @@
 import { TodoActionTypes } from './actions';
 import update from 'immutability-helper';
 import { combineReducers } from 'redux';
+import { indexOf } from 'lodash';
 
-const defaultState = {};
+let defaultState = {
+  todo:[  'walking','reading']
+}
+
+;
 
 const todoReducer = (state = defaultState, action: any) => {
   switch (action.type) {
-    case TodoActionTypes.addTodo:
-      return state;
-    case TodoActionTypes.deleteTodo: {
-      return state;
+    case 'addTodo':
+      console.log(state.todo)
+
+      return  {...state,todo:[...state.todo,action.payload]}
+    case 'deleteTodo': {
+      return {...state.todo.splice(action.payload, 1),todo:[...state.todo]};
     }
 
     default:
