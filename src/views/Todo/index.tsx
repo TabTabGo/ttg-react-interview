@@ -19,7 +19,7 @@ const Todo = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="sm" className={classes.container}>
+      <Container maxWidth="md" className={classes.container}>
         <h1>To Do App</h1>
         <TodoList />
       </Container>

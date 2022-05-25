@@ -15,10 +15,17 @@ const history = createBrowserHistory({ basename: '.' });
 
 const useStyles = makeStyles(theme =>
   createStyles({
-    root: {},
+    root: { 
+      
+    },
     logo: {
       width: 120,
+      padding:15
     },
+    nav1:{
+      backgroundColor:'white',
+    },
+
   })
 );
 
@@ -34,10 +41,10 @@ const App = () => {
         <Router history={history}>
           <Box display="flex" flexDirection="column" minHeight="100vh">
             {/* Header Component can be added here*/}
-            <Box display="flex" alignContent="center">
-              <img className={classes.logo} alt="TabTabGo Logo" />
+            <Box display="flex" alignContent="center" className={classes.nav1}>
+              <img src={logo} className={classes.logo} alt="TabTabGo Logo" />
             </Box>
-            <Box display="flex" flex={1} justifyContent="center">
+            <Box display="flex" flex={1} justifyContent="center" >
               <Switch>
                 <Route path="/">
                   <Todo />
