@@ -1,9 +1,9 @@
 import { responsiveFontSizes } from '@material-ui/core';
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles';
 
 import { grey } from '@material-ui/core/colors';
 
-const primary = '#ea26c2';
+const primary = '#e84c3d';
 
 const theme = createTheme({
   typography: {
@@ -88,7 +88,7 @@ const theme = createTheme({
     },
     MuiInput: {
       root: {
-        color: 'black'
+        color: 'black',
       },
       underline: {
         '&:after': {
@@ -122,7 +122,7 @@ const theme = createTheme({
     },
     MuiOutlinedInput: {
       root: {
-        color: 'black'
+        color: '#fff',
       },
       adornedEnd: {
         paddingRight: 4,

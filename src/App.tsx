@@ -10,12 +10,16 @@ import Todo from './views/Todo';
 
 import packageJson from '../package.json';
 import logo from './assets/img/logo.png';
+import Header from './views/components/Header';
 
 const history = createBrowserHistory({ basename: '.' });
 
 const useStyles = makeStyles(theme =>
   createStyles({
-    root: {},
+    root: {
+      color: '#fff',
+      backgroundColor: '#121212',
+    },
     logo: {
       width: 120,
     },
@@ -32,11 +36,8 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <React.Suspense fallback={<LoadingPage />}>
         <Router history={history}>
-          <Box display="flex" flexDirection="column" minHeight="100vh">
-            {/* Header Component can be added here*/}
-            <Box display="flex" alignContent="center">
-              <img className={classes.logo} alt="TabTabGo Logo" />
-            </Box>
+          <Box display="flex" className={classes.root} flexDirection="column" minHeight="100vh">
+            <Header />
             <Box display="flex" flex={1} justifyContent="center">
               <Switch>
                 <Route path="/">
