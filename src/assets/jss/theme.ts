@@ -1,14 +1,11 @@
 import { responsiveFontSizes } from '@material-ui/core';
-import { createTheme } from '@material-ui/core/styles'
+import { createTheme } from '@material-ui/core/styles';
 
 import { grey } from '@material-ui/core/colors';
 
-const primary = '#ea26c2';
+const primary = '#f58f27';
 
 const theme = createTheme({
-  typography: {
-    fontFamily: 'Lato',
-  },
   palette: {
     type: 'light',
     primary: {
@@ -46,7 +43,7 @@ const theme = createTheme({
       disabledBackground: 'rgba(0, 0, 0, 0.12)',
     },
     text: {
-      primary: grey[50],
+      primary: '#737374',
     },
   },
   overrides: {
@@ -88,7 +85,7 @@ const theme = createTheme({
     },
     MuiInput: {
       root: {
-        color: 'black'
+        color: 'black',
       },
       underline: {
         '&:after': {
@@ -122,7 +119,7 @@ const theme = createTheme({
     },
     MuiOutlinedInput: {
       root: {
-        color: 'black'
+        color: 'black',
       },
       adornedEnd: {
         paddingRight: 4,

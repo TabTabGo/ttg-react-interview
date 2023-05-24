@@ -1,16 +1,16 @@
-import { Task } from '../types/Task';
+import { ITask } from '../interfaces/ITask';
 
 class TaskService {
   task_key = 'TASkS';
 
   constructor() {}
 
-  loadFromStorage(): Array<Task> {
+  loadFromStorage(): Array<ITask> {
     var stored = localStorage.getItem(this.task_key);
     return stored ? JSON.parse(stored) : [];
   }
 
-  commit(tasks: Array<Task>) {
+  commit(tasks: Array<ITask>) {
     localStorage.setItem(this.task_key, JSON.stringify(tasks));
   }
 
@@ -23,7 +23,7 @@ class TaskService {
     return tasks.find(t => t.id === id);
   }
 
-  addTask(task: Task) {
+  addTask(task: ITask) {
     var tasks = this.loadFromStorage();
     tasks.push({
       ...task,
