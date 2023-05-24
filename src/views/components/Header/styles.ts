@@ -3,8 +3,10 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 export const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     header: {
-      borderRadius: 10,
-      background: '#ECF8F9',
+      background: 'white',
+    },
+    toolbar: {
+      // width: '100%',
     },
     menuButton: {
       marginRight: theme.spacing(2),

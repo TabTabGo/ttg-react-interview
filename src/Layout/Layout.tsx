@@ -11,13 +11,12 @@ function Layout({ children }: LayoutProps) {
   const styles = useStyles();
   return (
     <>
-      <Box display="flex" flexDirection="column" className={styles.root}>
+      <div className={styles.root}>
         <Header />
-        <Box display="flex" flex={1} justifyContent="center">
-          {children}
-        </Box>
+        <div className={styles.toolBarMargin}></div>
+        {children}
         <Footer />
-      </Box>
+      </div>
     </>
   );
 }

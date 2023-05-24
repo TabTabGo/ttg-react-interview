@@ -8,8 +8,8 @@ function Header() {
   const styles = useStyles();
   return (
     <>
-      <AppBar position="static" className={styles.header}>
-        <Toolbar>
+      <AppBar position="fixed" className={styles.header}>
+        <Toolbar className={styles.toolbar}>
           <div className={styles.logoContainer}>
             <img className={styles.logo} src={logo} alt="TabTabGo Logo" />
           </div>
