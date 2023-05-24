@@ -19,7 +19,7 @@ export class TodoActions {
         },
       } = getState();
 
-      const todo = { id: todos.length, title, description };
+      const todo = { id: todos.length + 1, title, description };
 
       taskService.addTask(todo);
 
