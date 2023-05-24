@@ -1,5 +1,8 @@
 import { Dispatch } from 'redux';
 import { ITask } from '../../../interfaces/ITask';
+import TaskService from '../../../services/TasksService';
+
+const taskService = new TaskService();
 
 export const TodoActionTypes = {
   addTodo: 'TODO/ADD',
@@ -16,9 +19,13 @@ export class TodoActions {
         },
       } = getState();
 
+      const todo = { id: todos.length, title, description };
+
+      taskService.addTask(todo);
+
       dispatch({
         type: TodoActionTypes.addTodo,
-        payload: [{ id: todos.length, title, description }, ...todos],
+        payload: [todo, ...todos],
       });
     };
 
@@ -28,6 +35,8 @@ export class TodoActions {
         current: { todos },
       },
     } = getState();
+
+    taskService.removeTask(id);
 
     dispatch({
       type: TodoActionTypes.deleteTodo,
