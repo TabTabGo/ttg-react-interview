@@ -6,11 +6,12 @@ import { useAppDispatch } from '../../../../hooks/useAppDipatch';
 import { TodoActions } from '../../redux/actions';
 import { useFormik } from 'formik';
 import { taskFormSchema } from '../../../../schemas/taskFormSchema';
-
+import { useStyles } from './styles';
 interface AddTaskFormProps {
   onSubmit: () => void;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const AddTaskForm = ({ onSubmit }: AddTaskFormProps) => {
+const AddTaskForm = ({ onSubmit, setOpen }: AddTaskFormProps) => {
   const dispatch = useAppDispatch();
   const { addTodo } = new TodoActions();
   const { values, handleBlur, handleChange, errors, touched, handleSubmit, getFieldProps } =
@@ -27,16 +28,22 @@ const AddTaskForm = ({ onSubmit }: AddTaskFormProps) => {
             description: values.description,
           })
         );
+        setOpen(false);
       },
     });
+  const styles = useStyles();
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <TitleIcon color={errors.title && touched.title ? 'error' : 'disabled'} />
+            <TitleIcon
+              color={
+                errors.title && touched.title ? 'error' : values.title ? 'primary' : 'disabled'
+              }
+            />
           </Grid>
-          <Grid item>
+          <Grid item className={styles.field}>
             <TextField
               required
               label="Title"
@@ -44,25 +51,37 @@ const AddTaskForm = ({ onSubmit }: AddTaskFormProps) => {
               onFocus={() => {
                 console.log('test');
               }}
+              fullWidth
+              helperText={errors.title}
               {...getFieldProps('title')}
             />
           </Grid>
         </Grid>
         <Grid container spacing={1} alignItems="flex-end">
           <Grid item>
-            <ShortTextIcon color={touched.description ? 'primary' : 'disabled'} />
+            <ShortTextIcon
+              color={
+                errors.description && touched.description
+                  ? 'error'
+                  : values.description
+                  ? 'primary'
+                  : 'disabled'
+              }
+            />
           </Grid>
-          <Grid item>
+          <Grid item className={styles.field}>
             <TextField
               name="description"
               onChange={handleChange}
               onBlur={handleBlur}
               value={values.description}
-              // error
+              error={errors.description ? true : false}
               id="standard-error-helper-text"
               label="Description"
               multiline
               maxRows={2}
+              helperText={errors.description}
+              fullWidth
             />
           </Grid>
         </Grid>
