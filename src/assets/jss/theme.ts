@@ -43,7 +43,7 @@ const theme = createTheme({
       disabledBackground: 'rgba(0, 0, 0, 0.12)',
     },
     text: {
-      primary: grey[50],
+      primary: '#737374',
     },
   },
   overrides: {
