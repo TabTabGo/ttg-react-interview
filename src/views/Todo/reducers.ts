@@ -1,17 +1,37 @@
+import { Task } from '../../types/Task';
 import { TodoActionTypes } from './actions';
 import update from 'immutability-helper';
 import { combineReducers } from 'redux';
 
-const defaultState = {};
+interface InitialState {
+  todos: string[];
+}
+interface AddTodoAction {
+  type: string;
+  payload: Task;
+}
 
-const todoReducer = (state = defaultState, action: any) => {
+interface DeleteTodoAction {
+  type: string;
+  payload: number;
+}
+const defaultState = { todos: []};
+
+type TodoAction = AddTodoAction | DeleteTodoAction;
+
+const todoReducer = (state: InitialState = defaultState, action: TodoAction) => {
   switch (action.type) {
     case TodoActionTypes.addTodo:
-      return state;
-    case TodoActionTypes.deleteTodo: {
-      return state;
-    }
-
+      return {
+        ...state,
+        todos: [...state.todos, action.payload],
+      };
+    case TodoActionTypes.deleteTodo: 
+    return {
+      ...state,
+      todos: state.todos.filter((_, index) => index !== action.payload),
+    };
+    
     default:
       return state;
   }

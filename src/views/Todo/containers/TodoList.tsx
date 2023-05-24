@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import AddTodo from '../components/AddTodo';
-
+import Todos from '../components/Todos';
 const useStyles = makeStyles(theme =>
   createStyles({
     root: {},
@@ -14,6 +13,7 @@ const TodoList = () => {
   return (
     <div className={classes.root}>
       <AddTodo />
+      <Todos/>
     </div>
   );
 };
