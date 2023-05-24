@@ -86,7 +86,7 @@ const AddTaskForm = ({ onSubmit, setOpen }: AddTaskFormProps) => {
           </Grid>
         </Grid>
         <Button type="submit" color="primary" variant="contained">
-          Add Task
+          Add Task 
         </Button>
       </form>
     </>

@@ -10,7 +10,8 @@ import { ITask } from 'interfaces/ITask';
 import { useStyles } from './styles';
 import { useAppDispatch } from 'hooks/useAppDipatch';
 import { TodoActions } from 'views/Todo/redux/actions';
-
+import 'atropos/css';
+import Atropos from 'atropos/react';
 interface TodoCardProps {
   todo: ITask;
 }
@@ -20,28 +21,39 @@ function TodoCard({ todo }: TodoCardProps) {
   const { removeTodo } = new TodoActions();
 
   return (
-    <Card elevation={5} className={styles.root}>
-      <CardHeader
-        avatar={<Avatar className={styles.avatar}>{todo.title[0].toUpperCase()}</Avatar>}
-        action={
-          <IconButton
-            className={styles.icon}
-            aria-label="settings"
-            onClick={() => {
-              dispatch(removeTodo(todo.id));
-            }}
-          >
-            <DeleteOutlined />
-          </IconButton>
-        }
-        title={todo.title}
-      />
-      <CardContent>
-        <Typography className={styles.descr} color="textSecondary">
-          {todo.description}
-        </Typography>
-      </CardContent>
-    </Card>
+    <div className={styles.atroposContainer}>
+      <Atropos
+        innerClassName={styles.atroposContainer}
+        shadow={true}
+        shadowOffset={20}
+        shadowScale={1}
+      >
+        <Card elevation={5} className={styles.root}>
+          <CardHeader
+            data-atropos-offset="5"
+            avatar={<Avatar className={styles.avatar}>{todo.title[0].toUpperCase()}</Avatar>}
+            action={
+              <IconButton
+                data-atropos-offset="5"
+                className={styles.icon}
+                aria-label="settings"
+                onClick={() => {
+                  dispatch(removeTodo(todo.id));
+                }}
+              >
+                <DeleteOutlined />
+              </IconButton>
+            }
+            title={todo.title}
+          />
+          <CardContent>
+            <Typography className={styles.descr} color="textSecondary" data-atropos-offset="2">
+              {todo.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Atropos>
+    </div>
   );
 }
 export default TodoCard;

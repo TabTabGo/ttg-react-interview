@@ -6,6 +6,10 @@ export const useStyles = makeStyles((theme: Theme) =>
       maxWidth: 345,
       borderRadius: 20,
     },
+    atroposContainer: {
+      maxWidth: 345,
+      borderRadius: 20,
+    },
     media: {
       height: 0,
       paddingTop: '56.25%', // 16:9
@@ -13,8 +17,8 @@ export const useStyles = makeStyles((theme: Theme) =>
     avatar: {
       backgroundColor: theme.palette.primary.main,
     },
-    icon : {
-      color : theme.palette.error.light,
+    icon: {
+      color: theme.palette.error.light,
     },
     descr: {
       width: '100%',
