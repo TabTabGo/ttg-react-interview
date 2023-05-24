@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux';
+import { Task } from '../../types/Task';
 
 export const TodoActionTypes = {
   addTodo: 'TODO/ADD',
@@ -6,7 +7,17 @@ export const TodoActionTypes = {
 };
 
 export class TodoActions {
-  addTodo = (title: string) => {};
+  static addTodo = (newTodo: Task) => (dispatch: Dispatch) => {
+    dispatch({
+      type: TodoActionTypes.addTodo,
+      payload: newTodo,
+    });
+  };
 
-  removeTodo = (id: string) => {};
+  static deleteTodo = (id: number) => (dispatch: Dispatch) => {
+    dispatch({
+      type: TodoActionTypes.deleteTodo,
+      payload: id,
+    });
+  };
 }
