@@ -24,6 +24,7 @@
     "date-fns": "^2.15.0",
     "formik": "^2.1.5",
     "immutability-helper": "^3.1.1",
+    "install": "^0.13.0",
     "lodash": "^4.17.19",
     "moment": "^2.29.1",
     "qs": "^6.9.4",
@@ -63,6 +64,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-  }
+  "devDependencies": {}
 }
