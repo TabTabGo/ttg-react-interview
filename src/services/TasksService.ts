@@ -32,9 +32,8 @@ class TaskService {
     this.commit(tasks);
   }
 
-  removeTask(id: number) {
+  removeTask(index: number) {
     var tasks = this.loadFromStorage();
-    var index = tasks.findIndex(t => t.id === id);
     if (index > -1) {
       tasks.splice(index, 1);
     }
