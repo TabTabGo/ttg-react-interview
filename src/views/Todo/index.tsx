@@ -5,12 +5,16 @@ import { makeStyles } from '@material-ui/core/styles';
 import TodoList from './containers/TodoList';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-  },
+  root: {},
   container: {
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+    alignItems: 'center',
+    width: '100vw',
+    background: 'rgba(128, 128, 128, 0.3)',
+    border: '2px solid lightgrey',
+    borderRadius: '20px',
   },
 }));
 

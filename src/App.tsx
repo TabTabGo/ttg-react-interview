@@ -32,12 +32,19 @@ const App = () => {
     <MuiThemeProvider theme={theme}>
       <React.Suspense fallback={<LoadingPage />}>
         <Router history={history}>
-          <Box display="flex" flexDirection="column" minHeight="100vh">
+          <Box
+            display="flex"
+            flexDirection="column"
+            minHeight="100vh"
+            style={{
+              background: theme.palette.background.default, // Use the gradient from the theme
+            }}
+          >
             {/* Header Component can be added here*/}
-            <Box display="flex" alignContent="center">
-              <img className={classes.logo} alt="TabTabGo Logo" />
+            <Box display="flex" alignContent="center" bgcolor="#fff" width={'10%'}>
+              <img className={classes.logo} src={logo} alt="TabTabGo Logo" />
             </Box>
-            <Box display="flex" flex={1} justifyContent="center">
+            <Box display="flex" flex={1} justifyContent="center" alignItems={'center'}>
               <Switch>
                 <Route path="/">
                   <Todo />
