@@ -1,9 +1,10 @@
 import { responsiveFontSizes } from '@material-ui/core';
 import { createTheme } from '@material-ui/core/styles'
 
-import { grey } from '@material-ui/core/colors';
+import { blue, green, grey, orange, pink } from '@material-ui/core/colors';
 
-const primary = '#ea26c2';
+const primary = '#3f51b5';
+const secondary = '#ff4081';
 
 const theme = createTheme({
   typography: {
@@ -15,26 +16,26 @@ const theme = createTheme({
       main: primary,
     },
     secondary: {
-      main: '#1bafd5',
+      main: secondary,
     },
     error: {
       light: '#ef5350',
-      main: '#f44336',
+      main: pink[500],
       dark: '#e53935',
     },
     warning: {
       light: '#ffa726',
-      main: '#ff9800',
+      main: orange[500],
       dark: '#fb8c00',
     },
     success: {
       light: '#66bb6a',
-      main: '#4caf50',
+      main: green[500],
       dark: '#43a047',
     },
     info: {
       light: '#26c6da',
-      main: '#00acc1',
+      main: blue[500],
       dark: '#00acc1',
     },
     action: {
@@ -46,8 +47,13 @@ const theme = createTheme({
       disabledBackground: 'rgba(0, 0, 0, 0.12)',
     },
     text: {
-      primary: grey[50],
+      primary: grey[900],
     },
+    background:{
+      default: grey[100],
+      paper: '#ffffff',
+    },
+    
   },
   overrides: {
     MuiAppBar: {

@@ -27,7 +27,6 @@ class TaskService {
     var tasks = this.loadFromStorage();
     tasks.push({
       ...task,
-      id: tasks.length + 1,
     });
     this.commit(tasks);
   }
