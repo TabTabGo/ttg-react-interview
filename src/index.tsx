@@ -8,11 +8,9 @@ import reportWebVitals from './reportWebVitals';
 import Store from './reducers/stores';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={Store}>
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={Store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 
