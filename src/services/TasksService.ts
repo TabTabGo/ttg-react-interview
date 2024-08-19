@@ -3,7 +3,7 @@ import { Task } from '../types/Task';
 class TaskService {
   task_key = 'TASkS';
 
-  constructor() {}
+  constructor() { }
 
   loadFromStorage(): Array<Task> {
     var stored = localStorage.getItem(this.task_key);
@@ -15,30 +15,35 @@ class TaskService {
   }
 
   getTasks() {
-    return this.loadFromStorage();
+    return this.loadFromStorage().reverse();
   }
 
-  getTask(id: number) {
+  getTask(id: number): Task | null {
     var tasks = this.loadFromStorage();
-    return tasks.find(t => t.id === id);
+    const task = tasks.find(t => t.id === id)
+    return task || null;
   }
 
-  addTask(task: Task) {
+  addTask(task: Task): number {
     var tasks = this.loadFromStorage();
+    const taskCreatedId = tasks.length + 1
     tasks.push({
       ...task,
-      id: tasks.length + 1,
+      id: taskCreatedId,
     });
     this.commit(tasks);
+    return taskCreatedId;
   }
 
-  removeTask(id: number) {
+  removeTask(id: number): boolean {
     var tasks = this.loadFromStorage();
     var index = tasks.findIndex(t => t.id === id);
     if (index > -1) {
       tasks.splice(index, 1);
+      this.commit(tasks);
+      return true;
     }
-    this.commit(tasks);
+    return false;
   }
 }
 

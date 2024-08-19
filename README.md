@@ -39,7 +39,7 @@ The app was setup using [Create React App](https://facebook.github.io/create-rea
 
 The app relies on the following main packages / frameworks
 
-- [Material-UI](https://material-ui.com/) – The main UI library with the default CSS-in-JSS styling solution. Keep in mind that the current version in use is version **4** and not **5**. 
+- [Material-UI](https://material-ui.com/) – The main UI library with the default CSS-in-JSS styling solution. Keep in mind that the current version in use is version **4** and not **5**.
 - [Redux](https://redux.js.org/) – For state management along with [Redux Thunk](https://redux.js.org/usage/writing-logic-thunks) as the middleware.
 - [Formik](https://formik.org/) – For handling forms and [Yup](https://github.com/jquense/yup) for schema validation.
 - [Axios](https://axios-http.com/) – The HTTP client library
@@ -75,6 +75,8 @@ You might have also noticed the logo in the header isn't showing. Investigate th
 
 Using Task service to get list of tasks, add task and remove task
 
-#### 5. Use Zustand instead of  Redux (option)
+#### 5. Use Zustand instead of Redux (option)
 
 The application is build using Redux. Can you replace redux state managment to use [Zustand](https://github.com/pmndrs/zustand)
+
+<!-- +971 55 557 9788 -->

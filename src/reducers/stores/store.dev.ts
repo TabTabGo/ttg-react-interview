@@ -14,4 +14,9 @@ const Store = (preLoadedState: any) => {
   return store;
 };
 
+
+const State = Store({}).getState
+export type RootState = ReturnType<typeof State>;
 export default Store;
+
+

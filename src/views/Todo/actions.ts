@@ -1,12 +1,34 @@
-import { Dispatch } from 'redux';
+import { Task } from './../../types/Task';
 
-export const TodoActionTypes = {
-  addTodo: 'TODO/ADD',
-  deleteTodo: 'TODO/REMOVE',
-};
+
+
+export enum ACTIONS_TYPE {
+  SET_TODOS_ACTION = 'TODO/SET',
+  ADD_TODO_ACTION = 'TODO/ADD',
+  REMOVE_TODO_ACTION = 'TODO/REMOVE'
+}
 
 export class TodoActions {
-  addTodo = (title: string) => {};
+  setTodos = (tasks: Array<Task>) => {
+    return {
+      type: ACTIONS_TYPE.SET_TODOS_ACTION,
+      payload: tasks,
+    };
+  };
 
-  removeTodo = (id: string) => {};
+  addTodo = (task: Task) => {
+    return {
+      type: ACTIONS_TYPE.ADD_TODO_ACTION,
+      payload: task,
+    };
+  };
+
+  removeTodo = (id: number) => {
+    return {
+      type: ACTIONS_TYPE.REMOVE_TODO_ACTION,
+      payload: id,
+    };
+  };
 }
+
+export default new TodoActions()

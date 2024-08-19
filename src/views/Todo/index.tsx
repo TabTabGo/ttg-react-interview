@@ -1,16 +1,10 @@
-import * as React from 'react';
-import { Container } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import Header from './components/Header';
 import TodoList from './containers/TodoList';
 
 const useStyles = makeStyles(theme => ({
   root: {
-  },
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    width: "50%"
   },
 }));
 
@@ -19,10 +13,8 @@ const Todo = () => {
 
   return (
     <div className={classes.root}>
-      <Container maxWidth="sm" className={classes.container}>
-        <h1>To Do App</h1>
-        <TodoList />
-      </Container>
+      <Header />
+      <TodoList />
     </div>
   );
 };

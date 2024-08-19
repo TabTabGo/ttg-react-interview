@@ -3,7 +3,7 @@ import { createTheme } from '@material-ui/core/styles'
 
 import { grey } from '@material-ui/core/colors';
 
-const primary = '#ea26c2';
+const primary = '#621D86';
 
 const theme = createTheme({
   typography: {
@@ -37,6 +37,10 @@ const theme = createTheme({
       main: '#00acc1',
       dark: '#00acc1',
     },
+    grey: {
+      "200": "#F2F2F2",
+      "500": "#C1C1C1",
+    },
     action: {
       active: 'rgba(0, 0, 0, 0.10)',
       hover: '#f6f0ff',
@@ -57,6 +61,25 @@ const theme = createTheme({
         },
       },
     },
+    MuiDialogTitle: {
+      root: {
+        color: "#fff",
+        padding: "12px",
+        background: primary,
+        textTransform: "capitalize",
+        marginBottom: "10px"
+      }
+    },
+    MuiDialogContent: {
+      root: {
+        color: '#000'
+      }
+    },
+    MuiIconButton: {
+      root: {
+        padding: 6
+      }
+    },
     MuiButton: {
       textPrimary: {
         color: primary,
@@ -65,10 +88,17 @@ const theme = createTheme({
         color: primary,
       },
       contained: {
+        height: "35px",
         '&.Mui-disabled': {
           opacity: 0.5,
         },
       },
+      outlined: {
+        height: "35px",
+        border: "1.5px solid",
+        borderColor: grey[500],
+        color: "red"
+      }
     },
     MuiInputLabel: {
       shrink: {
@@ -122,7 +152,8 @@ const theme = createTheme({
     },
     MuiOutlinedInput: {
       root: {
-        color: 'black'
+        color: 'black',
+        height: "45px"
       },
       adornedEnd: {
         paddingRight: 4,

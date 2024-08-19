@@ -34,10 +34,10 @@ const App = () => {
         <Router history={history}>
           <Box display="flex" flexDirection="column" minHeight="100vh">
             {/* Header Component can be added here*/}
-            <Box display="flex" alignContent="center">
-              <img className={classes.logo} alt="TabTabGo Logo" />
+            <Box position={"absolute"} left={20} top={20}>
+              <img src={logo} className={classes.logo} alt="TabTabGo Logo" />
             </Box>
-            <Box display="flex" flex={1} justifyContent="center">
+            <Box display="flex" mt={8} flex={1} justifyContent="center">
               <Switch>
                 <Route path="/">
                   <Todo />
